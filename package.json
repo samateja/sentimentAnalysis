@@ -1,0 +1,31 @@
+{
+  "name": "twitter-dresslife",
+  "version": "1.0.0",
+  "description": "Twitter sentiment analysis for dressLife",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samateja/sentimentAnalysis.git"
+  },
+  "keywords": [
+    "dressLife",
+    "Twitter",
+    "sentimentAnalysis",
+    "sentiment"
+  ],
+  "author": "Venkat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samateja/sentimentAnalysis/issues"
+  },
+  "homepage": "https://github.com/samateja/sentimentAnalysis#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "async": "^2.1.5",
+    "sentiment": "^3.0.1",
+    "twitter": "^1.7.0"
+  }
+}
