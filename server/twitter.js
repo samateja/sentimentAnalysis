@@ -14,11 +14,11 @@ var twitterAnalysis = function () {
 
     this.getTwitterData = function (query, callback) {
         var dataScore = {
-            "Very Negative" : 0,
-            "Negative"      : 0,
-            "Neutral"       : 0,
-            "Positive"      : 0,
-            "Very Positive" : 0
+            "veryNegative"  : 0,
+            "negative"      : 0,
+            "neutral"       : 0,
+            "positive"      : 0,
+            "veryPositive"  : 0
         };
         var sum = 0;
 
@@ -32,23 +32,23 @@ var twitterAnalysis = function () {
                 var sentScore = sentiment(item.text, function (err, data) {
                     if (data.score < -4) {
                         sortedTwitterData.unshift(item.text);
-                        dataScore["Very Negative"] += 1;
+                        dataScore["veryNegative"] += 1;
                     }
                     else if (data.score >= -3 && data.score < 0) {
                         sortedTwitterData.splice(2, 0, item.text);
-                        dataScore["Negative"] += 1;
+                        dataScore["negative"] += 1;
                     }
                     else if (data.score == 0) {
                         sortedTwitterData.splice(3, 0, item.text);
-                        dataScore["Neutral"] += 1;
+                        dataScore["neutral"] += 1;
                     }
                     else if (data.score > 0 && data.score <= 3) {
                         sortedTwitterData.splice(4, 0, item.text);
-                        dataScore["Positive"] += 1;
+                        dataScore["positive"] += 1;
                     }
                     else {
                         sortedTwitterData.push(item.text);
-                        dataScore["Very Positive"] += 1;
+                        dataScore["veryPositive"] += 1;
                     }
                     callEach();
                 });
